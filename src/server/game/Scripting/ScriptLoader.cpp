@@ -646,6 +646,10 @@ void AddSC_outdoorpvp_zm();
 // player
 void AddSC_chat_log();
 
+//Custom patch
+void AddSC_DuelReset();
+void AddSC_System_Censure();
+
 #endif
 
 void AddScripts()
@@ -1342,7 +1346,7 @@ void AddBattlegroundScripts()
 void AddCustomScripts()
 {
 #ifdef SCRIPTS
-    /* This is where custom scripts should be added. */
-
+	AddSC_DuelReset();
+	AddSC_System_Censure();
 #endif
 }
