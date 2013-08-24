@@ -1415,6 +1415,9 @@ void World::SetInitialWorldSettings()
 
     TC_LOG_INFO(LOG_FILTER_SERVER_LOADING, "Loading Equipment templates...");           // must be after LoadCreatureTemplates
     sObjectMgr->LoadEquipmentTemplates();
+	
+    TC_LOG_INFO(LOG_FILTER_SERVER_LOADING, "Loading fake items...");
+    sObjectMgr->LoadFakeItems();
 
     TC_LOG_INFO(LOG_FILTER_SERVER_LOADING, "Loading Creature template addons...");
     sObjectMgr->LoadCreatureTemplateAddons();

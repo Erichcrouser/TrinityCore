@@ -12,6 +12,8 @@ set(scripts_STAT_SRCS
   ${scripts_STAT_SRCS}
   Custom/duel_reset.cpp
   Custom/chat_censure.cpp
+  Custom/login.cpp
+  Custom/npc_transmogrify.cpp
 )
 
 message("  -> Prepared: Custom")

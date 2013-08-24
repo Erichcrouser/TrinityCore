@@ -649,7 +649,8 @@ void AddSC_chat_log();
 //Custom patch
 void AddSC_DuelReset();
 void AddSC_System_Censure();
-
+void AddSC_announce_login();
+void AddSC_transmogrify_script();
 #endif
 
 void AddScripts()
@@ -1348,5 +1349,7 @@ void AddCustomScripts()
 #ifdef SCRIPTS
 	AddSC_DuelReset();
 	AddSC_System_Censure();
+	AddSC_announce_login();
+	AddSC_transmogrify_script();
 #endif
 }
