@@ -73,6 +73,7 @@
 #include "CharacterDatabaseCleaner.h"
 #include "ScriptMgr.h"
 #include "WeatherMgr.h"
+#include "AuctionHouseBot.h"
 #include "CreatureTextMgr.h"
 #include "SmartAI.h"
 #include "Channel.h"
@@ -1800,6 +1801,9 @@ void World::SetInitialWorldSettings()
 
     TC_LOG_INFO(LOG_FILTER_SERVER_LOADING, "Calculate random battleground reset time...");
     InitRandomBGResetTime();
+	
+    TC_LOG_INFO(LOG_FILTER_SERVER_LOADING, "Initialize AuctionHouseBot...");
+    auctionbot.Initialize();
 
     TC_LOG_INFO(LOG_FILTER_SERVER_LOADING, "Calculate guild limitation(s) reset time...");
     InitGuildResetTime();
@@ -1973,6 +1977,7 @@ void World::Update(uint32 diff)
     /// <ul><li> Handle auctions when the timer has passed
     if (m_timers[WUPDATE_AUCTIONS].Passed())
     {
+		auctionbot.Update();
         m_timers[WUPDATE_AUCTIONS].Reset();
 
         ///- Update mails (return old mails with item, or delete them)
