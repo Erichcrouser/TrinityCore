@@ -20,6 +20,9 @@
 #include "ArenaTeam.h"
 #include "ArenaTeamMgr.h"
 #include "Battleground.h"
+#include "Battlefield.h"
+#include "BattlefieldWG.h"
+#include "BattlefieldMgr.h"
 #include "CalendarMgr.h"
 #include "Chat.h"
 #include "Common.h"
@@ -928,6 +931,24 @@ void WorldSession::HandlePlayerLogin(LoginQueryHolder* holder)
 
     sObjectAccessor->AddObject(pCurrChar);
     //TC_LOG_DEBUG("Player %s added to Map.", pCurrChar->GetName().c_str());
+	
+    //Send WG timer to player at login 
+	if (sWorld->getBoolConfig(CONFIG_WINTERGRASP_ENABLE))
+	{
+	    if (BattlefieldWG* wg = (BattlefieldWG*)sBattlefieldMgr->GetBattlefieldByBattleId(BATTLEFIELD_BATTLEID_WG))
+	    {
+            if (wg->IsWarTime())
+            {
+                // "Battle in progress"
+                pCurrChar->SendUpdateWorldState(ClockWorldState[1], uint32(time(NULL)));
+            } else
+                // Time to next battle
+            {
+                wg->SendInitWorldStatesTo(pCurrChar);
+                pCurrChar->SendUpdateWorldState(ClockWorldState[1], uint32(time(NULL) + wg->GetTimer()));
+            }
+	    }
+	}
 
     pCurrChar->SendInitialPacketsAfterAddToMap();
 

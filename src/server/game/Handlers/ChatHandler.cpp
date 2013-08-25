@@ -236,7 +236,7 @@ void WorldSession::HandleMessagechatOpcode(WorldPacket& recvData)
         }
     }
 	
-    if (sender->isGMChat() && !msg.empty()))
+    if (sender->isGMChat() && !msg.empty())
         msg = "|cff2998ff" + msg + "|r";
 
     switch (type)

@@ -1231,15 +1231,15 @@ void World::LoadConfigSettings(bool reload)
     m_float_configs[CONFIG_STATS_LIMITS_CRIT] = sConfigMgr->GetFloatDefault("Stats.Limits.Crit", 95.0f);
 	
     //Reset Duel Cooldown
-    m_bool_configs[CONFIG_DUEL_RESET_COOLDOWN_ON_START] = ConfigMgr::GetBoolDefault("DuelReset.Cooldown.OnStart", false);
-    m_bool_configs[CONFIG_DUEL_RESET_COOLDOWN_ON_FINISH] = ConfigMgr::GetBoolDefault("DuelReset.Cooldown.OnFinish", false);
-    m_bool_configs[CONFIG_DUEL_RESET_COOLDOWN_ONLY_IN_ELWYNN_AND_DUROTAR] = ConfigMgr::GetBoolDefault("DuelReset.Cooldown.Only.in.Elwynn.and.Durotar", false);
-    m_bool_configs[CONFIG_DUEL_RESET_COOLDOWN_MAX_ENERGY_ON_START] = ConfigMgr::GetBoolDefault("DuelReset.Cooldown.Max.Energy.OnStart", false);
-    m_bool_configs[CONFIG_DUEL_RESET_COOLDOWN_RESET_ENERGY_ON_START] = ConfigMgr::GetBoolDefault("DuelReset.Cooldown.Reset.Energy.OnStart", false);
+    m_bool_configs[CONFIG_DUEL_RESET_COOLDOWN_ON_START] = sConfigMgr->GetBoolDefault("DuelReset.Cooldown.OnStart", false);
+    m_bool_configs[CONFIG_DUEL_RESET_COOLDOWN_ON_FINISH] = sConfigMgr->GetBoolDefault("DuelReset.Cooldown.OnFinish", false);
+    m_bool_configs[CONFIG_DUEL_RESET_COOLDOWN_ONLY_IN_ELWYNN_AND_DUROTAR] = sConfigMgr->GetBoolDefault("DuelReset.Cooldown.Only.in.Elwynn.and.Durotar", false);
+    m_bool_configs[CONFIG_DUEL_RESET_COOLDOWN_MAX_ENERGY_ON_START] = sConfigMgr->GetBoolDefault("DuelReset.Cooldown.Max.Energy.OnStart", false);
+    m_bool_configs[CONFIG_DUEL_RESET_COOLDOWN_RESET_ENERGY_ON_START] = sConfigMgr->GetBoolDefault("DuelReset.Cooldown.Reset.Energy.OnStart", false);
 
 	//Announce login/logout player
-	m_bool_configs[CONFIG_ANNOUNCE_LOGIN_PLAYER] = ConfigMgr::GetBoolDefault("Announce.LoginPlayer", false);
-	m_bool_configs[CONFIG_ANNOUNCE_LOGOUT_PLAYER] = ConfigMgr::GetBoolDefault("Announce.LogoutPlayer", false);
+	m_bool_configs[CONFIG_ANNOUNCE_LOGIN_PLAYER] = sConfigMgr->GetBoolDefault("Announce.LoginPlayer", false);
+	m_bool_configs[CONFIG_ANNOUNCE_LOGOUT_PLAYER] = sConfigMgr->GetBoolDefault("Announce.LogoutPlayer", false);
 	
     // call ScriptMgr if we're reloading the configuration
     if (reload)

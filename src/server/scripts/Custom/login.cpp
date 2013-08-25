@@ -1,5 +1,6 @@
 #include "ScriptPCH.h"
 #include "Config.h"
+#include "Language.h"
 
 #define CUSTOM_BLUE          "|cff00479E"
 #define CUSTOM_RED            "|cffFF0000"
