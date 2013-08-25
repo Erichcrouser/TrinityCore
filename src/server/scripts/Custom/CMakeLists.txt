@@ -14,6 +14,7 @@ set(scripts_STAT_SRCS
   Custom/chat_censure.cpp
   Custom/login.cpp
   Custom/npc_transmogrify.cpp
+  Custom/player_learnspell.cpp
 )
 
 message("  -> Prepared: Custom")

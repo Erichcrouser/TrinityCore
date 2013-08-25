@@ -1236,6 +1236,10 @@ void World::LoadConfigSettings(bool reload)
     m_bool_configs[CONFIG_DUEL_RESET_COOLDOWN_MAX_ENERGY_ON_START] = ConfigMgr::GetBoolDefault("DuelReset.Cooldown.Max.Energy.OnStart", false);
     m_bool_configs[CONFIG_DUEL_RESET_COOLDOWN_RESET_ENERGY_ON_START] = ConfigMgr::GetBoolDefault("DuelReset.Cooldown.Reset.Energy.OnStart", false);
 
+	//Announce login/logout player
+	m_bool_configs[CONFIG_ANNOUNCE_LOGIN_PLAYER] = ConfigMgr::GetBoolDefault("Announce.LoginPlayer", false);
+	m_bool_configs[CONFIG_ANNOUNCE_LOGOUT_PLAYER] = ConfigMgr::GetBoolDefault("Announce.LogoutPlayer", false);
+	
     // call ScriptMgr if we're reloading the configuration
     if (reload)
         sScriptMgr->OnConfigLoad(reload);

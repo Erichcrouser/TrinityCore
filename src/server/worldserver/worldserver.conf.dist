@@ -28,6 +28,7 @@
 #    CHARACTER DELETE OPTIONS
 #    CUSTOM SERVER OPTIONS
 #	 DUEL RESET OPTIONS
+#    ANNOUNCE LOGIN/LOGOUT PLAYER OPTION
 #    LOGGING SYSTEM SETTINGS
 #
 ###################################################################################################
@@ -2651,6 +2652,26 @@ DuelReset.Cooldown.Max.Energy.OnStart = 0
 
 DuelReset.Cooldown.Reset.Energy.OnStart = 1
 
+#
+###################################################################################################
+
+###################################################################################################
+#
+# ANNOUNCE LOGIN/LOGOUT PLAYER OPTION
+#
+#	Announce.LoginPlayer
+#	Description: Announce when the player is login to the game.
+#	Default: 0 (Disabled)   
+#            1 (Enabled)
+#
+Announce.LoginPlayer = 0
+#
+#	Announce.LogoutPlayer
+#	Description: Announce when the player is logot from the game.
+#	Default: 0 (Disabled)
+#			 1 (Enabled)
+#
+Announce.LogoutPlayer = 0
 #
 ###################################################################################################
 
